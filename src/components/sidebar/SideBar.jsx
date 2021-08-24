@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
   AttachMoney,
   ChatBubbleOutline,
@@ -15,7 +17,7 @@ import React from 'react';
 
 import './sidebar.css';
 
-export default function SideBar() {
+const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -93,4 +95,6 @@ export default function SideBar() {
       </div>
     </div>
   );
-}
+};
+
+export default SideBar;
