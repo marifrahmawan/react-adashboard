@@ -1,0 +1,170 @@
+.product {
+  flex: 6;
+}
+
+.productTop {
+  display: flex;
+}
+
+.productTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.productAddButton {
+  width: 80px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #1e3163;
+  color: white;
+  cursor: pointer;
+}
+
+.productAddButton:hover {
+  font-weight: 600;
+  font-size: 17px;
+  background-color: #1a2238;
+}
+
+.productTopLeft {
+  flex: 3;
+}
+
+.productTopRight {
+  flex: 1;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: -5px 4px 13px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: -5px 4px 13px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -5px 4px 13px 0px rgba(0, 0, 0, 0.35);
+}
+
+.produdctInfoTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productInfoImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.productInfoName {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.produdctInfoBottom {
+  margin-top: 10px;
+}
+
+.productInfoItem {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px 15px 0px;
+}
+
+.productInfoValue {
+  font-weight: 300;
+}
+
+.productBottom {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+
+  box-shadow: -5px 4px 13px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: -5px 4px 13px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -5px 4px 13px 0px rgba(0, 0, 0, 0.35);
+}
+
+.productForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productFormLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.productFormLeft > label {
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+.productFormLeft > input {
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #555555;
+  height: 30px;
+  width: 50vw;
+  padding-left: 10px;
+}
+
+.productFormLeft > select {
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #555555;
+  height: 30px;
+  width: 100px;
+  padding-left: 10px;
+}
+
+.productFormRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.productUpload {
+  display: flex;
+  align-items: center;
+}
+.uploadIcon {
+  font-size: 40px !important;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.uploadIcon:hover {
+  cursor: pointer;
+  color: #df8611;
+}
+
+.productUploadImg {
+  margin-left: 20px;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.productButton {
+  margin-top: 20px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #1e3163;
+  color: white;
+  cursor: pointer;
+}
+
+.productButton:hover {
+  font-weight: 600;
+  font-size: 17px;
+  background-color: #1a2238;
+}

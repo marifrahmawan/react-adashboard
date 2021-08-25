@@ -1,80 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { DeleteOutline } from '@material-ui/icons';
 import { DataGrid } from '@material-ui/data-grid';
+import { Link } from 'react-router-dom';
 
+import { userRows } from '../../dummyData';
 import './user-list.css';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 90 },
-  {
-    field: 'firstName',
-    headerName: 'First Name',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'lastName',
-    headerName: 'Last Name',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 110,
-    editable: true,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full Name',
-    sortable: true,
-    width: 160,
-    editable: true,
-  },
-];
-
-const rows = [
-  {
-    id: 1,
-    lastName: 'Susan',
-    firstName: 'Sandra',
-    age: 33,
-    fullName: 'Susan Sandra',
-  },
-  {
-    id: 2,
-    lastName: 'Snow',
-    firstName: 'Jon',
-    age: 35,
-    fullName: 'Jon Snow',
-  },
-  {
-    id: 3,
-    lastName: 'Edward',
-    firstName: 'Newgate',
-    age: 26,
-    fullName: 'Edward Newgate',
-  },
-  {
-    id: 4,
-    lastName: 'Angeline',
-    firstName: 'Natalie',
-    age: 33,
-    fullName: 'Natalie Angeline',
-  },
-];
-
 export default function UserList() {
+  const userColumns = [
+    { field: 'id', headerName: 'ID', width: 90 },
+    {
+      field: 'user',
+      headerName: 'User Name',
+      width: 150,
+      editable: false,
+      renderCell: (params) => {
+        return (
+          <div className="userListUser">
+            <img
+              className="userListImg"
+              src={params.row.avatar}
+              alt="User Profile"
+            />
+            {params.row.username}
+          </div>
+        );
+      },
+    },
+    {
+      field: 'email',
+      headerName: 'E-Mail',
+      width: 270,
+      editable: true,
+    },
+    {
+      field: 'status',
+      headerName: 'Status',
+      sortable: true,
+      width: 120,
+      editable: false,
+    },
+    {
+      field: 'transaction',
+      headerName: 'Transaction',
+      sortable: true,
+      width: 150,
+      editable: false,
+    },
+    {
+      field: 'action',
+      headerName: 'Action',
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <>
+            <Link to={'/user/' + params.row.id}>
+              <button className="userListEdit">Edit</button>
+            </Link>
+            <DeleteOutline
+              className="userListDelete"
+              onClick={userDeleteHandler.bind(null, params.row.id)}
+            />
+          </>
+        );
+      },
+    },
+  ];
+
+  const [data, setData] = useState(userRows);
+
+  const userDeleteHandler = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
+
   return (
     <div className="userList">
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        checkboxSelection
-        disableSelectionOnClick
-      />
+      <div className="userListHeader">
+        <h1 className="userListTitle">User List</h1>
+        <Link to="/newUser">
+          <button className="userListAddButton">Create</button>
+        </Link>
+      </div>
+      <div className="userListTable">
+        <DataGrid
+          rows={data}
+          columns={userColumns}
+          pageSize={10}
+          checkboxSelection
+          disableSelectionOnClick
+        />
+      </div>
     </div>
   );
 }

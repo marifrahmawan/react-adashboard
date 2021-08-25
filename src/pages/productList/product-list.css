@@ -1,16 +1,16 @@
-.userList {
-  flex: 6;
+.productList {
   margin: 10px 20px;
+  flex: 6;
 }
 
-.userListHeader {
+.productListHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.userListAddButton {
+.productListAddButton {
   width: 80px;
   padding: 5px;
   border: none;
@@ -20,22 +20,22 @@
   color: white;
   cursor: pointer;
 }
-.userListAddButton:hover {
+.productListAddButton:hover {
   font-weight: 600;
   font-size: 17px;
   background-color: #1a2238;
 }
 
-.userListTable {
+.productListTable {
   height: 67vh;
 }
 
-.userListUser {
+.productListItem {
   display: flex;
   align-items: center;
 }
 
-.userListImg {
+.productListImg {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -43,26 +43,26 @@
   margin-right: 10px;
 }
 
-.userListEdit {
+.productListEdit {
   border: none;
   border-radius: 10px;
   padding: 5px 10px;
   background-color: #85c085;
   cursor: pointer;
 }
-.userListEdit:hover {
+.productListEdit:hover {
   font-size: 14px;
   background-color: #063b06;
   color: white;
 }
 
-.userListDelete {
+.productListDelete {
   font-size: 25px !important;
   margin-left: 10px;
   color: rgb(216, 23, 23);
   cursor: pointer;
 }
-.userListDelete:hover {
+.productListDelete:hover {
   color: rgb(95, 13, 13);
   font-size: 35px !important;
 }
